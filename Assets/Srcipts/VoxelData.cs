@@ -4,14 +4,14 @@ using UnityEngine;
 
 public static class VoxelData
 {
-    public static readonly int ChunkWidth;
-    public static readonly int ChunkHeight;
+    public static readonly int ChunkWidth = 5;
+    public static readonly int ChunkHeight = 5;
 
     public static readonly Vector3[] vertices = new Vector3[8] {
-       new Vector3(0.0f, 0.0f, 0.0f), 
-       new Vector3(1.0f, 0.0f, 0.0f ),
-       new Vector3(0.0f, 1.0f, 0.0f ),
+       new Vector3(0.0f, 0.0f, 0.0f),  //3 2
+       new Vector3(1.0f, 0.0f, 0.0f ), //0 1
        new Vector3(1.0f, 1.0f, 0.0f ),
+       new Vector3(0.0f, 1.0f, 0.0f ),
 
        new Vector3(0.0f, 0.0f,  1.0f),
        new Vector3(1.0f, 0.0f, 1.0f ),
@@ -27,5 +27,13 @@ public static class VoxelData
         {4, 7, 0, 3 }, // Left face
         {1, 2, 5, 6 }, // Right face
         
+    };
+
+    public static readonly Vector2[] uv = new Vector2[4] {
+        // В каком порядке в Triangles используются точку в таком и подаём uv
+        new Vector2(0.0f, 0.0f),
+        new Vector2(0.0f, 1.0f),
+        new Vector2(1.0f, 0.0f),
+        new Vector2(1.0f, 1.0f),
     };
 }
